@@ -1,5 +1,5 @@
-insert into DOCTOR(id, name) values (1, 'Linda Cardellini');
-insert into DOCTOR(id, name) values (2, 'Mike Bush');
-insert into DOCTOR(id, name) values (3, 'Angela Obama');
-insert into DOCTOR(id, name) values (4, 'John Sill');
-insert into DOCTOR(id, name) values (5, 'Kate Wisdom');
+insert into DOCTOR(id, name) values (1, 'Abel Reuben');
+insert into DOCTOR(id, name) values (2, 'Bean Roy');
+insert into DOCTOR(id, name) values (3, 'Bonhoeffer Dietrich');
+insert into DOCTOR(id, name) values (4, 'Bonner Elena');
+insert into DOCTOR(id, name) values (5, 'Bowles Paul');
