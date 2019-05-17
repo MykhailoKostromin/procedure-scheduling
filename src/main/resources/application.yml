@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    open-in-view: true
+    show-sql: true
+  datasource:
+    data:
+      - classpath:/datasource/data/patient.sql
+      - classpath:/datasource/data/doctor.sql
+      - classpath:/datasource/data/room.sql
+      - classpath:/datasource/data/procedure.sql

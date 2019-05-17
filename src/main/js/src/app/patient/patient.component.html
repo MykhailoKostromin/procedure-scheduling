@@ -1,0 +1,34 @@
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Day of birth</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let patient of patientList">
+      <td>{{patient.id}}</td>
+      <td>{{patient.name}}</td>
+      <td>{{patient.sex}}</td>
+      <td>{{patient.dayOfBirth | date: 'dd.MM.yyyy'}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deletePatient(patient)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="text" placeholder="name" [(ngModel)]="newPatient.name" required></td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="newPatient.sex">
+          <option *ngFor="let item of sexList" [value]="item">{{item}}</option>
+        </select>
+      </td>
+      <td><input type="date" [(ngModel)]="newPatient.dayOfBirth"></td>
+      <td><button class="btn btn-primary" (click)="addPatient()">Add</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

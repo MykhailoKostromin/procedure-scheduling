@@ -1,0 +1,21 @@
+{
+  "id": null,
+  "patient": {
+    "id": 3,
+    "name": "Angela Obama",
+    "sex": "female",
+    "dayOfBirth": "1980-09-14T00:00:00Z"
+  },
+  "doctor": {
+    "id": 4,
+    "name": "Bob Gill"
+  },
+  "room": {
+    "id": 4,
+    "name": "Room #4"
+  },
+  "description": "physical examination (propaedeutic procedures)",
+  "status": "In_Progress",
+  "plannedStartTime": "2019-05-16T23:41:47.008Z",
+  "estimatedEndTime": "2019-05-20T23:41:48.000Z"
+}

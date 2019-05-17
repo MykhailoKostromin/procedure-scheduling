@@ -1,0 +1,72 @@
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Patient</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Planned Start Time</th>
+      <th>Estimated End Time</th>
+      <th>Doctor</th>
+      <th>Room</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let procedure of procedureList">
+      <td>{{procedure.id}}</td>
+      <td>{{procedure.patient.name}}</td>
+      <td>{{procedure.description}}</td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="procedure.status" (change)="updateStatus(procedure)">
+          <option *ngFor="let item of statusList" [ngValue]="item">{{item}}</option>
+        </select>
+      </td>
+      <td>{{procedure.plannedStartTime | date: 'dd.MM.yyyy hh:mm'}}</td>
+      <td>{{procedure.estimatedEndTime | date: 'dd.MM.yyyy hh:mm'}}</td>
+      <td>{{procedure.doctor.name}}</td>
+      <td>{{procedure.room.name}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteProcedure(procedure)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="newProcedure.patient">
+          <option *ngFor="let item of patientList" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" placeholder="description" [(ngModel)]="newProcedure.description" required>
+      </td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="newProcedure.status">
+          <option *ngFor="let item of statusList" [ngValue]="item">{{item}}</option>
+        </select>
+      </td>
+      <td>
+        <input placeholder="Planned Start Time" [(ngModel)]="newProcedure.plannedStartTime" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" required>
+        <owl-date-time #dt1></owl-date-time>
+      </td>
+      <td>
+        <input placeholder="Estimated End Time" [(ngModel)]="newProcedure.estimatedEndTime" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2">
+        <owl-date-time #dt2></owl-date-time>
+      </td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="newProcedure.doctor">
+          <option *ngFor="let item of doctorList" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </td>
+      <td>
+        <select class="selectpicker" [(ngModel)]="newProcedure.room">
+          <option *ngFor="let item of roomList" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="addProcedure()">Add</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
